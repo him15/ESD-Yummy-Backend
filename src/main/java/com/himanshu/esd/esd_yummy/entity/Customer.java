@@ -32,12 +32,12 @@ public class Customer {
     @Column(name = "access_token", unique = true)
     private String accessToken;
 
-    @Column(name = "address", unique = true)
+    @Column(name = "address")
     private String address;
 
-    @Column(name = "city", unique = true)
+    @Column(name = "city")
     private String city;
 
-    @Column(name = "pincode", unique = true)
+    @Column(name = "pincode")
     private int pincode;
 }
