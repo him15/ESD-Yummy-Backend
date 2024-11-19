@@ -25,4 +25,22 @@ public class ProductService {
         productRepo.save(product1);
         return "Product added";
     }
+
+    public Product getProduct(String name) {
+        Product product = productRepo.findByName(name).orElse(null);
+        return product;
+    }
+
+    public String updateProduct(ProductRequest product) {
+        Product uproduct = getProduct(product.name());
+        uproduct.setPrice(product.price());
+        productRepo.save(uproduct);
+        return "Product updated";
+    }
+
+    public String deleteProduct(String name) {
+        Product product = productRepo.findByName(name).orElse(null);
+        productRepo.delete(product);
+        return "Product deleted";
+    }
 }
